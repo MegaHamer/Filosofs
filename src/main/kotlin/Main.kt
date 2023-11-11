@@ -14,6 +14,9 @@ fun main() {
     for (i in 0 until count){
         print("Введите имя для философа: ")
         table += Filosof (readln())
+        if (table[i].name == ""){
+            table[i].name = (i+1).toString();
+        }
     }
     val order = (0 until  count).shuffled()
     println("Выберите способ:")
@@ -28,13 +31,12 @@ fun main() {
         }
         "2"->{//палка
             for (i in order){
-                for (k in 0..1)
-                table[i].getFork(table[(i+count-1)%count],table[(i+count+1)%count],1)
+                table[i].getStick(table[(i+count-1)%count],table[(i+count+1)%count],1)
             }
         }
         "3"->{//палки
             for (i in order){
-                table[i].getFork(table[(i+count-1)%count],table[(i+count+1)%count],2)
+                table[i].getSticks(table[(i+count-1)%count],table[(i+count+1)%count],2)
             }
         }
         else->{
