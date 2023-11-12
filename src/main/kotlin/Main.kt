@@ -15,9 +15,9 @@ fun main() {
     for (i in 0 until count){
         print("Введите имя для философа: ")
         table += Filosof ((i+1).toString())
-        /*if (table[i].name == ""){
+        if (table[i].name == ""){
             table[i].name = (i+1).toString();
-        }*/
+        }
     }
 
     val order = (0 until  count).shuffled()

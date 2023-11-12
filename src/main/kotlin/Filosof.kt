@@ -7,10 +7,10 @@ class Filosof(var name:String) {
         when ((0..1).random()){
             0->{//взять слева
                 if (getLeft(leftFilosof,ForkCount)){
-                    println("Философ ${name} взял вилку СЛЕВА")
+                    println("Философ ${name} взял вилку слева")
                 }
                 else if (getRight(rightFilosof,ForkCount)){
-                    println("Философ ${name} взял вилку СПРАВА")
+                    println("Философ ${name} взял вилку справа")
                 }
                 else{
                     boo = false
@@ -107,8 +107,8 @@ class Filosof(var name:String) {
         return boo
     }
     private fun getLeft (leftFilosof: Filosof, count:Int):Boolean{
-        println(" левый Философ ${leftFilosof.name}  справа ${leftFilosof.itemsInRightHand}  слева ${leftFilosof.itemsInLeftHand}  всего ${leftFilosof.itemsInHands}")
-        println(leftFilosof.itemsInRightHand + this.itemsInLeftHand <count)
+        //println(" левый Философ ${leftFilosof.name}  справа ${leftFilosof.itemsInRightHand}  слева ${leftFilosof.itemsInLeftHand}  всего ${leftFilosof.itemsInHands}")
+        //println(leftFilosof.itemsInRightHand + this.itemsInLeftHand <count)
         if (leftFilosof.itemsInRightHand + this.itemsInLeftHand <count){
             this.itemsInLeftHand++
             this.itemsInHands++
@@ -117,8 +117,8 @@ class Filosof(var name:String) {
         else return false
     }
     private fun getRight (rightFilosof: Filosof, count:Int):Boolean{
-        println(" правый Философ ${rightFilosof.name}  справа ${rightFilosof.itemsInRightHand}  слева ${rightFilosof.itemsInLeftHand}  всего ${rightFilosof.itemsInHands}")
-        println(rightFilosof.itemsInLeftHand + this.itemsInRightHand <count)
+        //println(" правый Философ ${rightFilosof.name}  справа ${rightFilosof.itemsInRightHand}  слева ${rightFilosof.itemsInLeftHand}  всего ${rightFilosof.itemsInHands}")
+        //println(rightFilosof.itemsInLeftHand + this.itemsInRightHand <count)
         if (rightFilosof.itemsInLeftHand + this.itemsInRightHand < count){
             this.itemsInRightHand++
             this.itemsInHands++
